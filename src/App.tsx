@@ -3,7 +3,7 @@ import { useFetchRepositories } from "./hooks/useRepos";
 import { useFavoriteReposStore } from "./store/favoriteRepos";
 
 function App() {
-  const { data, isLoading } = useFetchRepositories("fazt");
+  const { data, isLoading } = useFetchRepositories("FranciscoOrtizCastillo");
   const favoriteRepos = useFavoriteReposStore(
     (state) => state.favoriteReposIds
   );
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div>
-      {data.map((repository) => (
+      {data?.map((repository) => (
         <Card
           repository={repository}
           key={repository.id}

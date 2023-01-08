@@ -8,7 +8,7 @@ type favoriteRepoState = {
 };
 
 export const useFavoriteReposStore = create(
-  persist((set) => ({
+  persist<favoriteRepoState>((set) => ({
     favoriteReposIds: [],
     addFavoriteRepo: (id: number) =>
       set((state) => ({ favoriteReposIds: [...state.favoriteReposIds, id] })),

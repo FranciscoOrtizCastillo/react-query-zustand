@@ -7,12 +7,9 @@ type CardProps = {
 };
 
 function Card({ repository, isFavorite }: CardProps) {
-  const addFavoriteRepo = useFavoriteReposStore(
-    (state) => state.addFavoriteRepo
-  );
-  const removeFavoriteRepo = useFavoriteReposStore(
-    (state) => state.removeFavoriteRepo
-  );
+
+  const addFavoriteRepo = useFavoriteReposStore( state => state.addFavoriteRepo );
+  const removeFavoriteRepo = useFavoriteReposStore( state => state.removeFavoriteRepo);
 
   const toggleFavorite = () => {
     if (isFavorite) {
